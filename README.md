@@ -29,6 +29,7 @@ authentication, and database operations.
 - Entity Framework Core Migrations
 - RESTful APIs
 - Exception Handling
+- Employee Search
 
 ## Project Structure
 
