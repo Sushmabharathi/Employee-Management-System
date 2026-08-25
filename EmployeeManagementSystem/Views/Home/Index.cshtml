@@ -1,0 +1,39 @@
+﻿@model IEnumerable<EmployeeManagementSystem.Models.Employee>
+<h2>Employee List</h2>
+
+<a asp-controller="Employee" asp-action="Create">Add Employee</a>
+
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    
+  @if (Model != null && Model.Any())
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Department</td>
+                <td>@item.Salary</td>
+                <td>@item.Email</td>
+               <td>
+    <a asp-action="Edit" asp-route-id="@item.Id" style="color:red;">Edit</a>
+</td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="6">No records found</td>
+        </tr>
+    }
+</table>
